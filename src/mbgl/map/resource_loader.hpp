@@ -44,8 +44,7 @@ public:
 
     // Fetch the tiles needed by the current viewport and emit a signal when
     // a tile is ready so observers can render the tile.
-    void update(Map&, Worker&, GlyphAtlas&, GlyphStore&,
-                SpriteAtlas&, util::ptr<Sprite>, TexturePool&);
+    void update(Map&, GlyphAtlas&, GlyphStore&, SpriteAtlas&, util::ptr<Sprite>, TexturePool&);
 
     // Source::Observer implementation.
     void onSourceLoaded();
@@ -57,6 +56,7 @@ private:
     std::string accessToken_;
     util::ptr<Style> style_;
     Observer* observer_;
+    std::unique_ptr<Worker> worker_;
 };
 
 }
