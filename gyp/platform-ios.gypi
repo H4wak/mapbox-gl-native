@@ -61,6 +61,10 @@
 
       'include_dirs': [
         '../include',
+        # FIXME: Allow layer violation temporally until we
+        # split the Map object into two. Only the implementation
+        # will depend on ./src (and will be also placed there).
+        '../src',
       ],
 
       'xcode_settings': {
@@ -79,6 +83,10 @@
       'direct_dependent_settings': {
         'include_dirs': [
           '../include',
+          # FIXME: Allow layer violation temporally until we
+          # split the Map object into two. Only the implementation
+          # will depend on ./src (and will be also placed there).
+          '../src',
         ],
         'mac_bundle_resources': [
           '<!@(find ./platform/ios/resources -type f)',
