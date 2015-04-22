@@ -177,7 +177,7 @@ void Source::render(Painter &painter, const StyleLayer &layer_desc) {
     gl::group group(std::string { "layer: " } + layer_desc.id);
     for (const auto& pair : tiles) {
         Tile &tile = *pair.second;
-        if (tile.data && tile.data->state == TileData::State::parsed) {
+        if (tile.data && tile.data->ready()) {
             painter.renderTileLayer(tile, layer_desc, tile.matrix);
         }
     }
@@ -214,17 +214,28 @@ TileData::State Source::hasTile(const TileID& id) {
     return TileData::State::invalid;
 }
 
+void Source::handlePartialTile(Worker &worker, const TileID &id) {
+    const TileID normalized_id = id.normalized();
+
+    auto it = tile_data.find(normalized_id);
+    if (it == tile_data.end()) {
+        return;
+    }
+
+    util::ptr<TileData> data = it->second.lock();
+    if (!data) {
+        return;
+    }
+
+    auto callback = std::bind(&Source::emitTileLoaded, this);
+    data->reparse(worker, callback);
+}
+
 TileData::State Source::addTile(Map &map, Worker &worker,
                                 util::ptr<Style> style, GlyphAtlas &glyphAtlas,
                                 GlyphStore &glyphStore, SpriteAtlas &spriteAtlas,
                                 util::ptr<Sprite> sprite, TexturePool &texturePool,
                                 const TileID &id) {
-    const TileData::State state = hasTile(id);
-
-    if (state != TileData::State::invalid) {
-        return state;
-    }
-
     auto pos = tiles.emplace(id, util::make_unique<Tile>(id));
     Tile& new_tile = *pos.first->second;
 
@@ -248,7 +259,6 @@ TileData::State Source::addTile(Map &map, Worker &worker,
     }
 
     auto callback = std::bind(&Source::emitTileLoaded, this);
-
     if (!new_tile.data) {
         // If we don't find working tile data, we're just going to load it.
         if (info.type == SourceType::Vector) {
@@ -319,7 +329,7 @@ bool Source::findLoadedChildren(const TileID& id, int32_t maxCoveringZoom, std::
     auto ids = id.children(z + 1);
     for (const auto& child_id : ids) {
         const TileData::State state = hasTile(child_id);
-        if (state == TileData::State::parsed) {
+        if (TileData::isReadyState(state)) {
             retain.emplace_front(child_id);
         } else {
             complete = false;
@@ -345,7 +355,7 @@ bool Source::findLoadedParent(const TileID& id, int32_t minCoveringZoom, std::fo
     for (int32_t z = id.z - 1; z >= minCoveringZoom; --z) {
         const TileID parent_id = id.parent(z);
         const TileData::State state = hasTile(parent_id);
-        if (state == TileData::State::parsed) {
+        if (TileData::isReadyState(state)) {
             retain.emplace_front(parent_id);
             return true;
         }
@@ -379,10 +389,21 @@ void Source::update(Map &map,
 
     // Add existing child/parent tiles if the actual tile is not yet loaded
     for (const auto& id : required) {
-        const TileData::State state = addTile(map, worker, style, glyphAtlas, glyphStore,
-                                              spriteAtlas, sprite, texturePool, id);
+        TileData::State state = hasTile(id);
 
-        if (state != TileData::State::parsed) {
+        switch (state) {
+        case TileData::State::partial:
+            handlePartialTile(worker, id);
+            break;
+        case TileData::State::invalid:
+            state = addTile(map, worker, style, glyphAtlas, glyphStore,
+                            spriteAtlas, sprite, texturePool, id);
+            break;
+        default:
+            break;
+        }
+
+        if (!TileData::isReadyState(state)) {
             // The tile we require is not yet loaded. Try to find a parent or
             // child tile that we already have.
 
@@ -417,7 +438,10 @@ void Source::update(Map &map,
         bool obsolete = std::find(retain.begin(), retain.end(), tile.id) == retain.end();
         if (!obsolete) {
             retain_data.insert(tile.data->id);
-        } else if (type != SourceType::Raster && tile.data->ready()) {
+        } else if (type != SourceType::Raster && tile.data->state == TileData::State::parsed) {
+            // Partially parsed tiles are never added to the cache because otherwise
+            // they never get updated if the go out from the viewport and the pending
+            // resources arrive.
             tileCache.add(tile.id.normalized().to_uint64(), tile.data);
         }
         return obsolete;
