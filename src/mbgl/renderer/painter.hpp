@@ -7,6 +7,7 @@
 #include <mbgl/util/mat4.hpp>
 #include <mbgl/util/noncopyable.hpp>
 #include <mbgl/renderer/frame_history.hpp>
+#include <mbgl/renderer/gl_config.hpp>
 #include <mbgl/style/types.hpp>
 
 #include <mbgl/shader/plain_shader.hpp>
@@ -165,8 +166,6 @@ private:
 public:
     void useProgram(uint32_t program);
     void lineWidth(float lineWidth);
-    void depthMask(bool value);
-    void depthRange(float near, float far);
 
 public:
     mat4 projMatrix;
@@ -193,11 +192,11 @@ private:
     bool debug = false;
     int indent = 0;
 
+    gl::Config config;
+
     uint32_t gl_program = 0;
     float gl_lineWidth = 0;
-    bool gl_depthMask = true;
     std::array<uint16_t, 2> gl_viewport = {{ 0, 0 }};
-    std::array<float, 2> gl_depthRange = {{ 0, 1 }};
     float strata = 0;
     RenderPass pass = RenderPass::Opaque;
     const float strata_epsilon = 1.0f / (1 << 16);
