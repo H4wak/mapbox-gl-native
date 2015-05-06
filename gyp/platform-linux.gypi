@@ -22,23 +22,23 @@
 
       'variables': {
         'cflags_cc': [
-          '<@(png_cflags)',
-          '<@(jpeg_cflags)',
-          '<@(uv_cflags)',
-          '<@(nu_cflags)',
-          '<@(boost_cflags)',
+          '""', # '<@(png_cflags)',
+          '""', # '<@(jpeg_cflags)',
+          '""', # '<@(uv_cflags)',
+          '""',  # '<@(nu_cflags)',
+          '""', # '<@(boost_cflags)',
         ],
         'ldflags': [
-          '<@(png_ldflags)',
-          '<@(jpeg_ldflags)',
-          '<@(uv_ldflags)',
-          '<@(nu_ldflags)',
+          '""', # '<@(png_ldflags)',
+          '""', # '<@(jpeg_ldflags)',
+          '""', # '<@(uv_ldflags)',
+          '""', # '<@(nu_ldflags)',
         ],
         'libraries': [
-          '<@(png_static_libs)',
-          '<@(jpeg_static_libs)',
-          '<@(uv_static_libs)',
-          '<@(nu_static_libs)',
+          '""', # '<@(png_static_libs)',
+          '""', # '<@(jpeg_static_libs)',
+          '""', # '<@(uv_static_libs)',
+          '""', # '<@(nu_static_libs)',
         ],
       },
 

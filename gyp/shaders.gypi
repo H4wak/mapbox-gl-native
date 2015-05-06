@@ -9,7 +9,7 @@
           'action_name': 'Build Shaders',
           'inputs': [
             '../scripts/build-shaders.py',
-            '<!@(find src -name "*.glsl")'
+             '<!@(python includeglsl.py)'
           ],
           'outputs': [
             '<(SHARED_INTERMEDIATE_DIR)/include/mbgl/shader/shaders.hpp',

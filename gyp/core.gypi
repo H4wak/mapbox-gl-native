@@ -11,13 +11,15 @@
       ],
 
       'sources': [
-        '<!@(find src -name "*.hpp")',
-        '<!@(find src -name "*.cpp")',
-        '<!@(find src -name "*.c")',
-        '<!@(find src -name "*.h")',
-        '<!@(find include -name "*.hpp")',
-        '<!@(find include -name "*.h")',
-        '<!@(find src -name "*.glsl")',
+       # '<!@(find src -name "*.pp")', # '<!@(find src -name "*.pp")', (aucuns fichiers .pp )
+       # '<!@(find src -name "*.cpp")',
+       # '<!@(find src -name "*.c")',
+        #'<!@(find src -name "*.h")',
+        #'<!@(find include -name "*.hpp")',
+        #'<!@(find include -name "*.h")',
+        #'<!@(find src -name "*.")',
+        #'src/clipper/clipper.cpp',
+        '<!@(python includesrc.py)',
         'bin/style.json'
       ],
 
@@ -28,21 +30,21 @@
 
       'variables': {
         'cflags_cc': [
-          '<@(uv_cflags)',
-          '<@(opengl_cflags)',
-          '<@(boost_cflags)',
+          '""', # <@(uv_cflags)',
+          '""', # '<@(opengl_cflags)',
+          '""', # '<@(boost_cflags)',
         ],
         'cflags': [
-          '<@(uv_cflags)',
-          '<@(opengl_cflags)',
+          '""', #  '<@(uv_cflags)',
+          '""', # '<@(opengl_cflags)',
           '-fPIC'
         ],
         'ldflags': [
-          '<@(uv_ldflags)',
-          '<@(opengl_ldflags)',
+          '""', # '<@(uv_ldflags)',
+          '""', # '<@(opengl_ldflags)',
         ],
         'libraries': [
-          '<@(uv_static_libs)',
+          '""', #  '<@(uv_static_libs)
         ],
       },
 

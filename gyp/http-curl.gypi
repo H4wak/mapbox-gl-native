@@ -17,17 +17,17 @@
 
       'variables': {
         'cflags_cc': [
-          '<@(uv_cflags)',
-          '<@(curl_cflags)',
-          '<@(boost_cflags)',
+          '""', # '<@(uv_cflags)',
+          '""', # '<@(curl_cflags)',
+          '""', # '<@(boost_cflags)',
         ],
         'ldflags': [
-          '<@(uv_ldflags)',
-          '<@(curl_ldflags)',
+          '""', # '<@(uv_ldflags)',
+          '""', # '<@(curl_ldflags)',
         ],
         'libraries': [
-          '<@(uv_static_libs)',
-          '<@(curl_static_libs)',
+          '""', # '<@(uv_static_libs)',
+          '""', # '<@(curl_static_libs)',
         ],
         'defines': [
           '-DMBGL_HTTP_CURL'
@@ -35,7 +35,7 @@
       },
 
       'conditions': [
-        ['host == "android"', {
+        ['OS == "android"', { #  host == android 
           'variables': {
             # Android uses libzip and openssl to set CURL's CA bundle.
             'cflags_cc': [ '<@(zip_cflags)', '<@(openssl_cflags)' ],

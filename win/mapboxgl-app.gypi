@@ -3,43 +3,36 @@
     '../gyp/common2.gypi',
   ],
   'targets': [
-    { 'target_name': 'mbgl-render',
-      'product_name': 'mbgl-render',
+    { 'target_name': 'winapp',
+      'product_name': 'mapbox-gl',
       'type': 'executable',
 
       'dependencies': [
         '../mbgl.gyp:core',
         '../mbgl.gyp:platform', # '../mbgl.gyp:platform-<(platform_lib)'
-        '../mbgl.gyp:headless', # '../mbgl.gyp:headless-<(headless_lib)',
         '../mbgl.gyp:http', #'../mbgl.gyp:http-<(http_lib)',
         '../mbgl.gyp:asset', # '../mbgl.gyp:asset-<(asset_lib)',
         '../mbgl.gyp:cache', # '../mbgl.gyp:cache-<(cache_lib)',
+        '../mbgl.gyp:bundle_styles',
         '../mbgl.gyp:copy_certificate_bundle',
       ],
 
-      'include_dirs': [
-        '../src',
-      ],
-
       'sources': [
-        './render.cpp',
+        'main.cpp',
+        '../platform/default/settings_json.cpp',
+        '../platform/default/glfw_view.cpp',
+        '../platform/default/log_stderr.cpp',
       ],
 
       'variables' : {
-        'cflags_cc': [
-          '""', # '<@(glfw3_cflags)',
-          '""', #  '<@(uv_cflags)',
-          '""', # '<@(boost_cflags)',
+        'cflags_cc': [   # VOIR DANS COMMON2.GYPI --> cflags
+          '""', # '<@(glfw3_cflag)'
         ],
         'ldflags': [
-          '""', # '<@(glfw3_ldflags)',
-          '""', #  '<@(uv_ldlags)',
-          '""', # '<@(boost_ldflags)',
-          '-lboost_program_options'
+          '""', # '<@(glfw3_ldflags)'
         ],
         'libraries': [
-          '""', #'<@(glfw3_static_libs)',
-          '""', # '<@(uv_static_libs)'
+          '""', # '<@(glfw3_static_libs)'
         ],
       },
 
@@ -47,8 +40,12 @@
         ['OS == "mac"', {
           'libraries': [ '<@(libraries)' ],
           'xcode_settings': {
+            'SDKROOT': 'macosx',
+            'SUPPORTED_PLATFORMS':'macosx',
             'OTHER_CPLUSPLUSFLAGS': [ '<@(cflags_cc)' ],
             'OTHER_LDFLAGS': [ '<@(ldflags)' ],
+            'SDKROOT': 'macosx',
+            'MACOSX_DEPLOYMENT_TARGET': '10.9',
           }
         }, {
           'cflags_cc': [ '<@(cflags_cc)' ],

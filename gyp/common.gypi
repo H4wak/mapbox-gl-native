@@ -86,7 +86,7 @@
           'DEAD_CODE_STRIPPING': 'NO',
           'GCC_INLINES_ARE_PRIVATE_EXTERN': 'NO',
           'OTHER_CPLUSPLUSFLAGS': [ '-fno-omit-frame-pointer','-fwrapv', '-fstack-protector-all', '-fno-common']
-        }
+        }, 
       },
       'Release': {
         'cflags_cc': [ '-g', '-O3' ],
