@@ -8,10 +8,7 @@
     './gyp/standalone.gypi',
     './gyp/core.gypi',
     './gyp/none.gypi',
-    './gyp/platform-linux.gypi', # ligne ajoutée
-    './gyp/headless-glx.gypi', #ligne ajoutée 
-    './gyp/http-curl.gypi',
-    './gyp/asset-zip.gypi'
+    './gyp/headless-cgl.gypi' #ligne ajoutée
   ],
   'conditions': [
    ['headless_lib == "cgl" and host == "osx"', { 'includes': [ './gyp/headless-cgl.gypi' ] } ],
@@ -20,6 +17,7 @@
    ['platform_lib == "ios" and host == "ios"', { 'includes': [ './gyp/platform-ios.gypi' ] } ],
    ['platform_lib == "linux"', { 'includes': [ './gyp/platform-linux.gypi' ] } ],
    ['platform_lib == "android" and host == "android"', { 'includes': [ './gyp/platform-android.gypi' ] } ],
+   ['platform_lib == "win" and host == "win"', { 'includes': [ './gyp/platform-win.gypi' ] } ],
    ['http_lib == "curl"', { 'includes': [ './gyp/http-curl.gypi' ] } ],
    ['http_lib == "nsurl" and (host == "osx" or host == "ios")', { 'includes': [ './gyp/http-nsurl.gypi' ] } ],
    ['asset_lib == "fs"', { 'includes': [ './gyp/asset-fs.gypi' ] } ],
