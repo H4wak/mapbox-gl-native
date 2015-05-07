@@ -21,11 +21,11 @@
       'dependencies': [
         'symlink_TEST_DATA',
         '../mbgl.gyp:core',
-        '../mbgl.gyp:platform', # '../mbgl.gyp:platform-<(platform_lib)'
-        '../mbgl.gyp:http', #'../mbgl.gyp:http-<(http_lib)',
-        '../mbgl.gyp:asset', # '../mbgl.gyp:asset-<(asset_lib)',
-        '../mbgl.gyp:cache', # '../mbgl.gyp:cache-<(cache_lib)',
-        '""', # '../mbgl.gyp:headless-<(headless_lib)',
+        '../mbgl.gyp:platform-<(platform_lib)'
+        '../mbgl.gyp:http-<(http_lib)',
+        '../mbgl.gyp:asset-<(asset_lib)',
+        '../mbgl.gyp:cache-<(cache_lib)',
+        '../mbgl.gyp:headless-<(headless_lib)',
         '../deps/gtest/gtest.gyp:gtest'
       ],
       'sources': [
@@ -68,19 +68,19 @@
         'storage/http_reading.cpp',
       ],
       'libraries': [
-        '""', # '<@(uv_static_libs)',
-        '""', # '<@(sqlite3_static_libs)',
+        '<@(uv_static_libs)',
+        '<@(sqlite3_static_libs)',
       ],
       'variables': {
         'cflags_cc': [
-          '""', # '<@(uv_cflags)',
-          '""', # '<@(opengl_cflags)',
-          '""', # '<@(boost_cflags)',
-          '""', #'<@(sqlite3_cflags)',
+          '<@(uv_cflags)',
+          '<@(opengl_cflags)',
+          '<@(boost_cflags)',
+          '<@(sqlite3_cflags)',
         ],
         'ldflags': [
-          '""', # '<@(uv_ldflags)',
-          '""', #'<@(sqlite3_ldflags)',
+          '<@(uv_ldflags)',
+          '<@(sqlite3_ldflags)',
         ],
       },
       'conditions': [

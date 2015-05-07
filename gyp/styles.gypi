@@ -19,15 +19,15 @@
       'hard_dependency': 1,
       'dependencies': [ 'touch_styles' ], # required for xcode http://openradar.appspot.com/7232149
       'conditions': [
-        #['platform_lib == "osx" or platform_lib == "ios"', {
-         # 'direct_dependent_settings': {
-        #    'mac_bundle_resources': [ '../styles/styles' ],
-        #  }
-       # }, {
-        #  'direct_dependent_settings': {
-        #    'copies': [{ 'files': [ '../styles/styles' ], 'destination': '<(PRODUCT_DIR)' }],
-        #  }
-        #}]
+        ['platform_lib == "osx" or platform_lib == "ios"', {
+          'direct_dependent_settings': {
+            'mac_bundle_resources': [ '../styles/styles' ],
+          }
+        }, {
+          'direct_dependent_settings': {
+            'copies': [{ 'files': [ '../styles/styles' ], 'destination': '<(PRODUCT_DIR)' }],
+          }
+        }]
       ],
     }
   ]

@@ -17,17 +17,17 @@
 
       'variables': {
         'cflags_cc': [
-          '""', # '<@(uv_cflags)',
-          '""', # '<@(curl_cflags)',
-          '""', # '<@(boost_cflags)',
+          '<@(uv_cflags)',
+          '<@(curl_cflags)',
+          '<@(boost_cflags)',
         ],
         'ldflags': [
-          '""', # '<@(uv_ldflags)',
-          '""', # '<@(curl_ldflags)',
+          '<@(uv_ldflags)',
+          '<@(curl_ldflags)',
         ],
         'libraries': [
-          '""', # '<@(uv_static_libs)',
-          '""', # '<@(curl_static_libs)',
+          '<@(uv_static_libs)',
+          '<@(curl_static_libs)',
         ],
         'defines': [
           '-DMBGL_HTTP_CURL'

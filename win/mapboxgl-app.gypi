@@ -9,10 +9,10 @@
 
       'dependencies': [
         '../mbgl.gyp:core',
-        '../mbgl.gyp:platform', # '../mbgl.gyp:platform-<(platform_lib)'
-        '../mbgl.gyp:http', #'../mbgl.gyp:http-<(http_lib)',
-        '../mbgl.gyp:asset', # '../mbgl.gyp:asset-<(asset_lib)',
-        '../mbgl.gyp:cache', # '../mbgl.gyp:cache-<(cache_lib)',
+        '../mbgl.gyp:platform-<(platform_lib)'
+        '../mbgl.gyp:http-<(http_lib)',
+        '../mbgl.gyp:asset-<(asset_lib)',
+        '../mbgl.gyp:cache-<(cache_lib)',
         '../mbgl.gyp:bundle_styles',
         '../mbgl.gyp:copy_certificate_bundle',
       ],
@@ -25,14 +25,14 @@
       ],
 
       'variables' : {
-        'cflags_cc': [   # VOIR DANS COMMON2.GYPI --> cflags
-          '""', # '<@(glfw3_cflag)'
+        'cflags_cc': [   
+          '<@(glfw3_cflag)'
         ],
         'ldflags': [
-          '""', # '<@(glfw3_ldflags)'
+          '<@(glfw3_ldflags)'
         ],
         'libraries': [
-          '""', # '<@(glfw3_static_libs)'
+          '<@(glfw3_static_libs)'
         ],
       },
 

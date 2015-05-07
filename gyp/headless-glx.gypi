@@ -14,10 +14,10 @@
         '../include',
       ],
 
-      'cflags_cc': [ '""' ], #'cflags_cc': [ '<@(opengl_cflags)' ],
+      'cflags_cc': [ '<@(opengl_cflags)' ],
 
       'link_settings': {
-        'libraries': [ '""' ], # 'libraries': [ '<@(opengl_ldflags)' ],
+        'libraries': [ '<@(opengl_ldflags)' ],
       },
     },
   ],

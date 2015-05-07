@@ -9,11 +9,11 @@
 
       'dependencies': [
         '../mbgl.gyp:core',
-        '../mbgl.gyp:platform', # '../mbgl.gyp:platform-<(platform_lib)'
-        '../mbgl.gyp:headless', # '../mbgl.gyp:headless-<(headless_lib)',
-        '../mbgl.gyp:http', #'../mbgl.gyp:http-<(http_lib)',
-        '../mbgl.gyp:asset', # '../mbgl.gyp:asset-<(asset_lib)',
-        '../mbgl.gyp:cache', # '../mbgl.gyp:cache-<(cache_lib)',
+        '../mbgl.gyp:platform-<(platform_lib)'
+        '../mbgl.gyp:headless-<(headless_lib)',
+        '../mbgl.gyp:http-<(http_lib)',
+        '../mbgl.gyp:asset-<(asset_lib)',
+        '../mbgl.gyp:cache-<(cache_lib)',
         '../mbgl.gyp:copy_certificate_bundle',
       ],
 
@@ -27,19 +27,19 @@
 
       'variables' : {
         'cflags_cc': [
-          '""', # '<@(glfw3_cflags)',
-          '""', #  '<@(uv_cflags)',
-          '""', # '<@(boost_cflags)',
+          '<@(glfw3_cflags)',
+          '<@(uv_cflags)',
+          '<@(boost_cflags)',
         ],
         'ldflags': [
-          '""', # '<@(glfw3_ldflags)',
-          '""', #  '<@(uv_ldlags)',
-          '""', # '<@(boost_ldflags)',
+          '<@(glfw3_ldflags)',
+          '<@(uv_ldlags)',
+          '<@(boost_ldflags)',
           '-lboost_program_options'
         ],
         'libraries': [
-          '""', #'<@(glfw3_static_libs)',
-          '""', # '<@(uv_static_libs)'
+          '<@(glfw3_static_libs)',
+          '<@(uv_static_libs)'
         ],
       },
 

@@ -6,11 +6,11 @@
 
       'dependencies': [
         'core',
-        'platform', #'platform-<(platform_lib)',
-        'http', #'http-<(http_lib)',
-        'asset', #'asset-<(asset_lib)',
-        'cache', #'cache-<(cache_lib)',
-        'headless', #'headless-<(headless_lib)',
+        'platform-<(platform_lib)',
+        'http-<(http_lib)',
+        'asset-<(asset_lib)',
+        'cache-<(cache_lib)',
+        'headless-<(headless_lib)',
       ],
     },
 
@@ -21,11 +21,11 @@
 
       'dependencies': [
         'core',
-        'platform', #'platform-<(platform_lib)',
-        'http', #'http-<(http_lib)',
-        'asset', #'asset-<(asset_lib)',
-        'cache', #'cache-<(cache_lib)',
-        'headless', #'headless-<(headless_lib)',
+        'platform-<(platform_lib)',
+        'http-<(http_lib)',
+        'asset-<(asset_lib)',
+        'cache-<(cache_lib)',
+        'headless-<(headless_lib)',
       ],
     },
   ],
