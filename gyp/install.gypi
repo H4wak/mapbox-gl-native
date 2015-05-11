@@ -14,16 +14,16 @@
       ],
 
       'copies': [
-        { 'files': [ '<(PRODUCT_DIR)/libmbgl.a' ], 'destination': '<(install_prefix)/lib' },
+       # { 'files': [ '<(PRODUCT_DIR)/libmbgl.a' ], 'destination': '<(install_prefix)/lib' },
         { 'files': [ '<(SHARED_INTERMEDIATE_DIR)/include/mbgl/util/version.hpp' ], 'destination': '<(install_prefix)/include/mbgl/util' },
       ],
 
       'actions': [
         {
           'action_name': 'Copy header files',
-          'inputs': [ '../include/mbgl/mbgl.hpp' ],
+          'inputs': [ '<(toto)/include/mbgl/mbgl.hpp' ],
           'outputs': [ '<(install_prefix)/include/mbgl/mbgl.hpp' ],
-          'action': [ 'cp', '-r', 'include', '<(install_prefix)/' ]
+          'action': [ 'cp', '-r', '<(toto)/include', '<(install_prefix)/' ] # 'action': [ 'cp', '-r', 'include', '<(install_prefix)/' ] 
         },
 
         { 'action_name': 'mbgl-config',
@@ -35,7 +35,7 @@
             '<(install_prefix)/bin/mbgl-config',
           ],
           'action': [
-            './utils/mbgl-config/build.sh',
+            '<(toto)/utils/mbgl-config/build.sh', # './utils/mbgl-config/build.sh', 
             '<(install_prefix)',
             '<(PRODUCT_DIR)/libmbgl.a.ldflags',
           ]
