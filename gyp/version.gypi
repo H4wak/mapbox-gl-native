@@ -8,13 +8,12 @@
         {
           'action_name': 'Build Version Header',
           'inputs': [
-            '../scripts/build-version.py',
+            '<(toto)/scripts/build-version.py', #  '../scripts/build-version.py',
           ],
           'outputs': [
             '<(SHARED_INTERMEDIATE_DIR)/include/mbgl/util/version.hpp',
           ],
-          'action': ['<@(_inputs)', '<(SHARED_INTERMEDIATE_DIR)', '<!@(git describe --tags --always --abbrev=0)', '<!@(git rev-parse HEAD)'],
-          #'action': ['<@(_inputs)', '<(SHARED_INTERMEDIATE_DIR)', 'ios-v0.2.16', '5ca44d145597d7e94c49a57d8638f9fcd9b9ba3e'],
+          'action': ['<@(_inputs)', '<(SHARED_INTERMEDIATE_DIR)', '<!@(git describe --tags --always --abbrev=0)', '<!@(git rev-parse HEAD)']
         }
       ],
       'direct_dependent_settings': {
