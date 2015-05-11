@@ -8,7 +8,7 @@
         {
           'action_name': 'Build Shaders',
           'inputs': [
-            '<(toto)/scripts/build-shaders.py',
+            '<(toto)/scripts/build-shaders.py', # MGDESIGN
              '<!@(python includeglsl.py)'  # find src "*.glsl"
           ],
           'outputs': [

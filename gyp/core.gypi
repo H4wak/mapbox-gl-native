@@ -19,7 +19,7 @@
         #'<!@(find include -name "*.h")',
         #'<!@(find src -name "*.")',
         #'src/clipper/clipper.cpp',
-        '<!@(python includesrc.py)',
+        '<!@(python includesrc.py)', # MGDESIGN
         #'src\mbgl\map\\vector_tile_data.cpp',
         #'src\mbgl\shader\\gaussian_shader.cpp',
         #'bin/style.json'

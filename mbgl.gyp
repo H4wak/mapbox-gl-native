@@ -8,7 +8,7 @@
     './gyp/standalone.gypi',
     './gyp/core.gypi',
     './gyp/none.gypi',
-    './gyp/headless-cgl.gypi' #ligne ajoutée
+    './gyp/headless-cgl.gypi' #ligne ajoutée # MGDESIGN
   ],
   'conditions': [
    ['headless_lib == "cgl" and host == "osx"', { 'includes': [ './gyp/headless-cgl.gypi' ] } ],

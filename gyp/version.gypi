@@ -8,7 +8,7 @@
         {
           'action_name': 'Build Version Header',
           'inputs': [
-            '<(toto)/scripts/build-version.py', #  '../scripts/build-version.py',
+            '<(toto)/scripts/build-version.py', #  '../scripts/build-version.py', # MGDESIGN
           ],
           'outputs': [
             '<(SHARED_INTERMEDIATE_DIR)/include/mbgl/util/version.hpp',

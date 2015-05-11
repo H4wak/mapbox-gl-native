@@ -4,7 +4,7 @@ set LIBS_win32=-Dheadless_lib=none -Dplatform_lib=win -Dasset_lib=zip -Dhttp_lib
 set TOTO=-Dtoto="C:\Users\test\Desktop\Fork_MapBox\mapbox-gl-native"
 ::set TOTO=-Dtoto="titi"
 
-
+:: # MGDESIGN
 
 
 gyp %TOTO% %CONFIG_win32% %LIBS_win32% --generator-output=./build/win -f msvs -G msvs_version=2013

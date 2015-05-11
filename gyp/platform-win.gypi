@@ -1,4 +1,4 @@
-{
+{ # MGDESIGN
   'targets': [
     { 'target_name': 'platform-win',
       'product_name': 'mbgl-platform-win',

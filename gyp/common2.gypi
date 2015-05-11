@@ -5,10 +5,10 @@
       ['OS == "mac"', {
         'target_arch%': 'x64',
       }],
-      ['OS == "win"', {
+      ['OS == "win"', { # MGDESIGN
         'target_arch%': 'ia32',
       }],
-    ['OS != "mac" and OS != "win"', {
+    ['OS != "mac" and OS != "win"', { 
         'target_arch%': '<(target_arch)',
       }],
     ],
@@ -55,7 +55,7 @@
           '-Wno-unknown-pragmas', # We are using '#pragma mark', but it is only available on Darwin.
         ],
       }],
-      ['OS=="win"', { # lignes ajoutées
+      ['OS=="win"', { # # MGDESIGN
         'cflags_cc': [
           '-Wno-unknown-pragmas', # We are using '#pragma mark', but it is only available on Darwin.
         ],

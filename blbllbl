@@ -2,3 +2,5 @@ call call "$(ProjectDir)..\..\setup_env.bat" && set CYGWIN=nontsec&& set OUTDIR=
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 python script/build-version.py 
+
+# MGDESIGN

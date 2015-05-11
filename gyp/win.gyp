@@ -1,4 +1,4 @@
-{
+{ # MGDESIGN
   'includes': [
     '../win/mapboxgl-app.gypi',
     '../test/test.gypi',
