@@ -1,0 +1,4 @@
+call call "$(ProjectDir)..\..\setup_env.bat" && set CYGWIN=nontsec&& set OUTDIR=$(OutDir)&& bash -c "\"scripts/build-version.py\" \"`cygpath -m \\\"${OUTDIR}\\\"`obj/global_intermediate\" \"ios-v0.2.16\" \"5ca44d145597d7e94c49a57d8638f9fcd9b9ba3e\""
+if %errorlevel% neq 0 exit /b %errorlevel%
+
+python script/build-version.py 
