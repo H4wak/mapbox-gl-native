@@ -9,6 +9,10 @@
 # undef max
 #endif
 
+#ifdef min
+# undef min
+#endif
+
 namespace mbgl {
 namespace util {
 

@@ -28,6 +28,7 @@
       'include_dirs': [
         '../include',
         '../src',
+        '../libs' #MGDESIGN
       ],
 
       'variables': {
@@ -75,7 +76,7 @@
 
       'direct_dependent_settings': {
         'include_dirs': [
-          '../include',
+          '../include'
         ],
       },
     },
