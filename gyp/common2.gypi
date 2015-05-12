@@ -88,7 +88,7 @@
           }, {
             'cflags_cc': [ '-fPIC' ],
           }],
-          ['OS == "ios"', { # c'était host == ios avant
+          ['host == "ios"', { # c'était host == ios avant
             'xcode_settings': {
               'SDKROOT': 'iphoneos',
               'SUPPORTED_S': 'iphonesimulator iphoneos',

@@ -7,7 +7,7 @@ set TOTO=-Dtoto="C:\Users\test\Desktop\Fork_MapBox\mapbox-gl-native"
 :: # MGDESIGN
 
 
-gyp %TOTO% %CONFIG_win32% %LIBS_win32% --generator-output=./build/win -f msvs -G msvs_version=2013
+gyp %TOTO% %CONFIG_win32% %LIBS_win32% --generator-output=./build/win -f msvs -G msvs_version=2015
 
 
 pause

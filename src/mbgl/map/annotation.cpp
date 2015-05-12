@@ -7,8 +7,11 @@
 #include <mbgl/util/ptr.hpp>
 #include <mbgl/util/std.hpp>
 
+
 #include <algorithm>
 #include <memory>
+
+#define M_PI 3.14159265358979323846
 
 namespace mbgl {
 
@@ -79,7 +82,7 @@ uint32_t AnnotationManager::nextID() {
 
 vec2<double> AnnotationManager::projectPoint(const LatLng& point) {
     // Project a coordinate into unit space in a square map.
-    const double sine = std::sin(point.latitude * M_PI / 180.0);
+    const double sine = std::sin(point.latitude * M_PI/ 180.0);
     const double x = point.longitude / 360.0 + 0.5;
     const double y = 0.5 - 0.25 * std::log((1.0 + sine) / (1.0 - sine)) / M_PI;
     return { x, y };

@@ -3,8 +3,11 @@
 
 #include <cmath>
 #include <array>
-
 #include <mbgl/util/vec.hpp>
+
+#ifdef max
+# undef max
+#endif
 
 namespace mbgl {
 namespace util {
