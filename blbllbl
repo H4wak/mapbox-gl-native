@@ -3,4 +3,4 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 
 python script/build-version.py 
 
-# MGDESIGN
+# MGDESIGN alors ?
