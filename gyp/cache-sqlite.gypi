@@ -15,6 +15,9 @@
       'include_dirs': [
         '../include',
         '../src',
+        '../libs/libuv-1.x', #MGDESIGN
+        '../libs/libuv-1.x/include',
+        '<(toto)\libs\sqlite'
       ],
 
       'variables': {

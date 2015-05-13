@@ -35,9 +35,9 @@
             '<(install_prefix)/bin/mbgl-config',
           ],
           'action': [
-            '<(toto)/utils/mbgl-config/build.sh', # './utils/mbgl-config/build.sh',  # MGDESIGN
-            '<(install_prefix)',
-            '<(PRODUCT_DIR)/libmbgl.a.ldflags',
+          #  '<(toto)/utils/mbgl-config/build.sh', # './utils/mbgl-config/build.sh',  # MGDESIGN
+           # '<(install_prefix)',
+           # '<(PRODUCT_DIR)/libmbgl.a.ldflags',
           ]
         }
       ]

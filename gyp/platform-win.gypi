@@ -45,7 +45,10 @@
       'include_dirs': [
         '../include',
         '../src',
-        '../libs' #MGDESIGN
+        '../libs/boost_1_55_0', #MGDESIGN
+        '../libs/lpng1617',
+        '../libs/libuv-1.x',
+        '../libs/libuv-1.x/include'
       ],
 
       'conditions': [

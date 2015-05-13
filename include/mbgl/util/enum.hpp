@@ -44,10 +44,18 @@ public:
     inline constexpr operator Type() const { return value; }
 };
 
+#ifdef _MSC_VER
+
+#define MBGL_DEFINE_ENUM_CLASS(name, type, strings, ...)
+
+#else
+
 #define MBGL_DEFINE_ENUM_CLASS(name, type, strings...) \
     const constexpr ::mbgl::EnumValue<type> type##_names[] = strings; \
     using name = ::mbgl::Enum<type, type##_names, sizeof(type##_names) / sizeof(::mbgl::EnumValue<type>)>; \
     inline std::ostream& operator<<(std::ostream& os, type t) { return os << name(t).str(); }
+
+#endif
 
 }
 

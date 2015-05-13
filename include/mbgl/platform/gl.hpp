@@ -24,6 +24,7 @@
     #include <GLES2/gl2ext.h>
 #else
     #define GL_GLEXT_PROTOTYPES
+	#define WIN32_LEAN_AND_MEAN
     #include <GL/gl.h>
     #include <GL/glext.h>
 #endif
