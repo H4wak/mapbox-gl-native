@@ -1,7 +1,7 @@
 #include <mbgl/platform/platform.hpp>
 
 #include <uv.h>
-#include <libgen.h>
+//#include <libgen.h>
 
 namespace mbgl {
 namespace platform {

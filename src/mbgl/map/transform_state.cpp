@@ -4,6 +4,8 @@
 #include <mbgl/util/constants.hpp>
 #include <mbgl/util/box.hpp>
 
+# define M_LN2          0.69314718055994530942
+
 using namespace mbgl;
 
 #pragma mark - Matrix

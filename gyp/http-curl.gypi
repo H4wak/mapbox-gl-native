@@ -14,7 +14,9 @@
         '../include',
         '../src',
         '../libs/libuv-1.x', #MGDESIGN
-        '../libs/libuv-1.x/include'
+        '../libs/libuv-1.x/include',
+        '../libs/curl/include/curl'
+
       ],
 
       'variables': {

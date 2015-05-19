@@ -10,6 +10,8 @@
 
 #include <cmath>
 
+#define M_PI 3.14159265358979323846
+
 using namespace mbgl;
 
 template <typename BucketProperties, typename StyleProperties>

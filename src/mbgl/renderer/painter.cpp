@@ -151,12 +151,12 @@ void Painter::depthMask(bool value) {
     }
 }
 
-void Painter::depthRange(const float near, const float far) {
-    if (gl_depthRange[0] != near || gl_depthRange[1] != far) {
+/*void Painter::depthRange(const float near, const float far) {
+    if ((gl_depthRange[0] != near) || (gl_depthRange[1] != far)) {
         MBGL_CHECK_ERROR(glDepthRange(near, far));
         gl_depthRange = {{ near, far }};
     }
-}
+}*/ //MGDESIGN
 
 
 void Painter::changeMatrix() {

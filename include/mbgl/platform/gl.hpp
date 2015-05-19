@@ -25,6 +25,8 @@
 #else
     #define GL_GLEXT_PROTOTYPES
 	#define WIN32_LEAN_AND_MEAN
+	#define NOMINMAX          
+
     #include <GL/gl.h>
     #include <GL/glext.h>
 #endif

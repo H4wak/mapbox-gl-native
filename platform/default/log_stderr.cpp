@@ -5,7 +5,7 @@
 namespace mbgl {
 
 void Log::platformRecord(EventSeverity severity, const std::string &msg) {
-    std::cerr << "[" << severity << "] " << msg << std::endl;
+    std::cerr << "[" << /*severity <<*/ "] " << msg << std::endl; // MGDESIGN
 }
 
 }

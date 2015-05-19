@@ -15,8 +15,8 @@
     },
 
     { 'target_name': 'standalone',
-      'product_name': 'libmbgl.a',
-      'type': 'executable',
+      'product_name': 'libmbgl',
+      'type': 'none',
       'hard_dependency': 1,
 
       'dependencies': [

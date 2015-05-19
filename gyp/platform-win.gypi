@@ -17,7 +17,7 @@
         '../platform/default/image.cpp',
         '../platform/default/image_reader.cpp',
         '../platform/default/png_reader.cpp',
-        '../platform/default/jpeg_reader.cpp',
+        '../platform/default/jpeg_reader.cpp'
       ],
 
       'variables': {
@@ -48,7 +48,10 @@
         '../libs/boost_1_55_0', #MGDESIGN
         '../libs/lpng1617',
         '../libs/libuv-1.x',
-        '../libs/libuv-1.x/include'
+        '../libs/libuv-1.x/include',
+        '<(toto)\libs\jpeg-6b',
+        '../libs',
+        '../libs/libnu'
       ],
 
       'conditions': [

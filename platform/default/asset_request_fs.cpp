@@ -7,6 +7,9 @@
 
 #include <uv.h>
 
+#include <sys\stat.h> // MGDESIGN
+
+#include <fcntl.h>
 #include <cassert>
 #include <limits>
 
@@ -64,7 +67,7 @@ AssetRequest::AssetRequest(const Resource& resource_, Callback callback_, uv_loo
         path = assetRoot + "/" + url.substr(8);
     }
 
-    uv_fs_open(loop, &req, path.c_str(), O_RDONLY, S_IRUSR, fileOpened);
+    uv_fs_open(loop, &req, path.c_str(), O_RDONLY, S_IREAD, fileOpened); // MGDESIGN S_IRUSR -> S_IREAD
 }
 
 void AssetRequest::fileOpened(uv_fs_t *req) {
@@ -110,6 +113,7 @@ void AssetRequest::fileStated(uv_fs_t *req) {
 #else
         auto stat = static_cast<const uv_stat_t *>(req->ptr);
 #endif
+
         if (stat->st_size > std::numeric_limits<int>::max()) {
             // File is too large for us to open this way because uv_buf's only support unsigned
             // ints as maximum size.

@@ -5,14 +5,6 @@
 #include <array>
 #include <mbgl/util/vec.hpp>
 
-#ifdef max
-# undef max
-#endif
-
-#ifdef min
-# undef min
-#endif
-
 namespace mbgl {
 namespace util {
 

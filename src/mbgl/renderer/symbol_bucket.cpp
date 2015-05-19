@@ -22,6 +22,8 @@
 #include <mbgl/util/merge_lines.hpp>
 #include <mbgl/util/std.hpp>
 
+#define M_PI 3.14159265358979323846
+
 #ifndef BUFFER_OFFSET
 #define BUFFER_OFFSET(i) ((char *)nullptr + (i))
 #endif

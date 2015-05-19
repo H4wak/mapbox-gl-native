@@ -7,7 +7,10 @@
 #include <mbgl/util/time.hpp>
 #include <mbgl/util/util.hpp>
 
-#include <curl/curl.h>
+#include <curl.h>
+
+#include <cctype>
+
 
 #ifdef __ANDROID__
 #include <mbgl/android/jni.hpp>

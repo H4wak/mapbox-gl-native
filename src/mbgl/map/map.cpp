@@ -7,6 +7,10 @@
 #include <mbgl/util/projection.hpp>
 #include <mbgl/util/thread.hpp>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 namespace mbgl {
 
 Map::Map(View& view, FileSource& fileSource, MapMode mode, bool startPaused)

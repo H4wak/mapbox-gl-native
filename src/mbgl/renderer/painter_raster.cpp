@@ -5,6 +5,8 @@
 #include <mbgl/shader/raster_shader.hpp>
 #include <mbgl/util/std.hpp>
 
+#define M_PI 3.14159265358979323846
+
 using namespace mbgl;
 
 void Painter::renderRaster(RasterBucket& bucket, const StyleLayer &layer_desc, const TileID&, const mat4 &matrix) {
