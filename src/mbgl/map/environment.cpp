@@ -3,7 +3,7 @@
 #include <mbgl/platform/gl.hpp>
 #include <mbgl/util/run_loop.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp> // mgdesign ::
 
 #include <atomic>
 #include <cassert>

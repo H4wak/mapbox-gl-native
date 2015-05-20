@@ -31,7 +31,9 @@
         '../libs/boost_1_55_0',
         '../libs/libuv-1.x', # MGDESIGN
         '../libs/libuv-1.x/include',
-        '../libs/pthreads'
+        '../libs/pthreads',
+        '../libs/zlib/include',
+        '../libs'
       ],
 
       'variables': {

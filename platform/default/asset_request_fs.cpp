@@ -5,7 +5,7 @@
 #include <mbgl/util/util.hpp>
 #include <mbgl/util/uv.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp>
 
 #include <sys\stat.h> // MGDESIGN
 

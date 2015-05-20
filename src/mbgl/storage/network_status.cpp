@@ -1,6 +1,6 @@
 #include <mbgl/storage/network_status.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp> // mgdesign //
 
 // Example: Allocate a reachability object
 // Reachability* reach = [Reachability reachabilityForInternetConnection];

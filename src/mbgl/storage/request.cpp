@@ -6,7 +6,7 @@
 #include <mbgl/util/std.hpp>
 #include <mbgl/util/uv.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp> // mgdesign //
 
 #include <cassert>
 #include <functional>

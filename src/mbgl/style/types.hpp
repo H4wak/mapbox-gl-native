@@ -114,6 +114,7 @@ MBGL_DEFINE_ENUM_CLASS(TranslateAnchorTypeClass, TranslateAnchorType, {
     { TranslateAnchorType::Viewport, "viewport" },
 });
 
+
 // -------------------------------------------------------------------------------------------------
 
 enum class RotateAnchorType : bool {

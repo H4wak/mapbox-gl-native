@@ -4,6 +4,7 @@
 #include <cmath>
 #include <array>
 #include <mbgl/util/vec.hpp>
+#define M_PI 3.14159265358979323846
 
 namespace mbgl {
 namespace util {

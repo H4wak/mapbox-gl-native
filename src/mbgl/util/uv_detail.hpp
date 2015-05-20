@@ -4,7 +4,7 @@
 #include <mbgl/util/uv.hpp>
 #include <mbgl/util/noncopyable.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp>
 
 #include <functional>
 #include <cassert>

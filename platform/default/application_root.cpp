@@ -1,6 +1,6 @@
 #include <mbgl/platform/platform.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp> // mgdesign //
 //#include <libgen.h>
 
 namespace mbgl {

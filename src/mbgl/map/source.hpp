@@ -18,6 +18,10 @@
 #include <iosfwd>
 #include <map>
 
+#ifdef min
+# error Huh!
+#endif
+
 
 namespace mbgl {
 
@@ -114,8 +118,8 @@ private:
     // Stores the time when this source was most recently updated.
     TimePoint updated = TimePoint::min();
 
-    std::map<TileID, std::unique_ptr<Tile>> tiles;
-    std::map<TileID, std::weak_ptr<TileData>> tile_data;
+    std::map<TileID, std::unique_ptr<Tile> > tiles;
+    std::map<TileID, std::weak_ptr<TileData> > tile_data;
     TileCache cache;
 };
 

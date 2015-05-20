@@ -2,6 +2,8 @@
 #include <mbgl/text/rotation_range.hpp>
 #include <mbgl/util/math.hpp>
 
+#define M_PI 3.14159265358979323846
+
 
 using namespace mbgl;
 

@@ -2,7 +2,7 @@
 #include <mbgl/util/uv_detail.hpp>
 #include <mbgl/util/string.hpp>
 
-#include <uv.h>
+#include <mbgl/platform/uv.hpp> // mgdesign //
 
 // Check libuv library version.
 const static bool uvVersionCheck = []() {
