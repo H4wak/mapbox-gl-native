@@ -2,9 +2,8 @@
 
 #include <uv.h>
 
-#define PTHREAD_ONCE_INIT 0
-typedef long pthread_once_t;
-typedef long pthread_key_t;
+#include <pthread.h> // MGDESIGN
+
 
 namespace mbgl {
 

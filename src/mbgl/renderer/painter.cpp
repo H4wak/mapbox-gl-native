@@ -23,7 +23,6 @@
 #include <mbgl/shader/dot_shader.hpp>
 #include <mbgl/shader/gaussian_shader.hpp>
 
-
 #include <mbgl/util/std.hpp>
 #include <mbgl/util/constants.hpp>
 #include <mbgl/util/mat3.hpp>
