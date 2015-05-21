@@ -109,7 +109,7 @@ Thread<Object>::Thread(const std::string& name, Args&&... args) {
         (void(name));
         #endif
 
-        constexpr auto seq = typename integer_sequence<sizeof...(Args)>::type();
+        /*constexpr mgdesign*/ auto seq = typename integer_sequence<sizeof...(Args)>::type();
         run(std::move(params), seq);
     });
 

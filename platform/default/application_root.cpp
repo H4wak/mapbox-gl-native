@@ -1,10 +1,13 @@
 #include <mbgl/platform/platform.hpp>
 
+
 #include <mbgl/platform/uv.hpp> // mgdesign //
 //#include <libgen.h>
 
 namespace mbgl {
 namespace platform {
+
+#ifndef _WIN32
 
 // Returns the path to the root folder of the application.
 const std::string &applicationRoot() {
@@ -23,6 +26,12 @@ const std::string &applicationRoot() {
     }();
     return root;
 }
+
+#else
+
+// TODO
+
+#endif
 
 }
 }

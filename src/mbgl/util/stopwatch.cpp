@@ -6,6 +6,7 @@
 #include <iostream>
 #include <atomic>
 
+using namespace mbgl;
 using namespace mbgl::util;
 
 stopwatch::stopwatch(Event event_)

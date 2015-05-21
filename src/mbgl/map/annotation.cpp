@@ -6,12 +6,13 @@
 #include <mbgl/util/constants.hpp>
 #include <mbgl/util/ptr.hpp>
 #include <mbgl/util/std.hpp>
+#include <mbgl/util/math.hpp>
 
 
 #include <algorithm>
 #include <memory>
 
-#define M_PI 3.14159265358979323846
+
 
 namespace mbgl {
 

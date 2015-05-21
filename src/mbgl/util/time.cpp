@@ -8,6 +8,8 @@ static const char *week[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 static const char *months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
+#ifndef _WIN32
+
 std::string rfc1123(std::time_t time) {
     std::tm info;
     gmtime_r(&time, &info);
@@ -16,6 +18,12 @@ std::string rfc1123(std::time_t time) {
              months[info.tm_mon], 1900 + info.tm_year, info.tm_hour, info.tm_min, info.tm_sec);
     return buffer;
 }
+
+#else
+
+// TODO mgdesign
+
+#endif
 
 }
 }
